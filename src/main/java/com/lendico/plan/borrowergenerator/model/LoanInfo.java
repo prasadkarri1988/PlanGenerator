@@ -1,13 +1,22 @@
 package com.lendico.plan.borrowergenerator.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class LoanInfo {
 
+	@NotNull
 	double loanAmount;
+	
+	@NotNull
 	double nominalRate;
+	
+	@NotNull
+	@Min(5)
 	int duration;
+	
+	@NotNull
 	String startDate;
-	
-	
 
 	public LoanInfo() {
 		super();
