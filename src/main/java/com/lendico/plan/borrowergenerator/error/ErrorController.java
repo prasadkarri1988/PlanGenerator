@@ -17,7 +17,7 @@ public class ErrorController implements org.springframework.boot.web.servlet.err
 	  @ResponseBody
 	  public ResponseEntity<ErrorDetails> handleError(HttpServletRequest request) {
 	      String Details=" Requested Page is not avalable please check URL";
-	      ErrorDetails errorDetails = new ErrorDetails(new Date(), "404 Error",Details);
+	      ErrorDetails errorDetails = new ErrorDetails(new Date(), "404 Not Found",Details);
 		    return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
 	  }
 
