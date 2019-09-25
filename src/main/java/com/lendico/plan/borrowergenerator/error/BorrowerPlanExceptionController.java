@@ -14,8 +14,7 @@ public class BorrowerPlanExceptionController {
 	
 	 @ExceptionHandler(BorrowerPlanProcessException.class)
 	  public final ResponseEntity<ErrorDetails> handleUserNotFoundException(BorrowerPlanProcessException ex, WebRequest request) {
-	    ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
-	        request.getDescription(false));
+	    ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),request.getDescription(false));
 	    return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	  }
 
